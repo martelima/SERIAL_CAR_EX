@@ -24,9 +24,10 @@
   equivalente a 255, por PWM os motores receberão tensão 
   total da fonte que estiver utilizando.
 */
+#define FatCorr 0.75
 
-#define vel_dir 
-#define vel_esq 
+#define vel_dir 10
+#define vel_esq 11
 #define Vmax 255
 
 int vel = 127;
@@ -38,10 +39,10 @@ int vel = 127;
 //int vSpeed_dir = 200; 
 //int vSpeed_esq = 200;
 
-#define Farol_dianteiro 
-#define Farol_traseiro
-#define Pisca_alerta 
-#define buzina
+#define Farol_dianteiro 8
+#define Farol_traseiro 7
+#define Pisca_alerta 2
+#define buzina 13
 //variável que atribuimos a leitura Serial do módulo bluetooth
 #define IN1 3
 #define IN2 5
@@ -119,7 +120,7 @@ void loop() {
     digitalWrite(IN2,0);
     digitalWrite(IN3,1);
     digitalWrite(IN4,0);
-    digitalWrite(vel_dir,vel);
+    digitalWrite(vel_dir,vel * FatCorr);
     digitalWrite(vel_esq,vel);
   }
 
@@ -128,7 +129,7 @@ void loop() {
     digitalWrite(IN2,0);
     digitalWrite(IN3,1);
     digitalWrite(IN4,0); 
-    digitalWrite(vel_dir,vel);
+    digitalWrite(vel_dir,vel * FatCorr);
     digitalWrite(vel_esq,vel);
   }
 
@@ -137,8 +138,8 @@ void loop() {
     digitalWrite(IN2,1);
     digitalWrite(IN3,1);
     digitalWrite(IN4,0);
-    digitalWrite(vel_dir,vel);
-    digitalWrite(vel_esq,v);
+    digitalWrite(vel_dir,vel * FatCorr);
+    digitalWrite(vel_esq,vel);
   }
 
   else if (state == 'B') { // Se o estado recebido for igual a 'B', o carro se movimenta para trás.
@@ -146,7 +147,7 @@ void loop() {
     digitalWrite(IN2,0);
     digitalWrite(IN3,0);
     digitalWrite(IN4,1);
-    digitalWrite(vel_dir,vel);
+    digitalWrite(vel_dir,vel * FatCorr);
     digitalWrite(vel_esq,vel);
   }
 
@@ -155,7 +156,7 @@ void loop() {
     digitalWrite(IN2,0);
     digitalWrite(IN3,0);
     digitalWrite(IN4,1);
-    digitalWrite(vel_dir,vel);
+    digitalWrite(vel_dir,vel * FatCorr);
     digitalWrite(vel_esq,vel);
   }
 
@@ -164,7 +165,7 @@ void loop() {
     digitalWrite(IN2,1);
     digitalWrite(IN3,0);
     digitalWrite(IN4,1);
-    digitalWrite(vel_dir,vel);
+    digitalWrite(vel_dir,vel * FatCorr);
     digitalWrite(vel_esq,vel);
   }
 
@@ -173,7 +174,7 @@ void loop() {
     digitalWrite(IN2,0);
     digitalWrite(IN3,0);
     digitalWrite(IN4,0);
-    digitalWrite(vel_dir,vel);
+    digitalWrite(vel_dir,vel * FatCorr);
     digitalWrite(vel_esq,vel);
   }
   else if (state == 'R') {   // Se o estado recebido for igual a 'R', o carro se movimenta para direita.
@@ -181,7 +182,7 @@ void loop() {
     digitalWrite(IN2,1);
     digitalWrite(IN3,0);
     digitalWrite(IN4,0);
-    digitalWrite(vel_dir,vel);
+    digitalWrite(vel_dir,vel * FatCorr);
     digitalWrite(vel_esq,vel);
   }
   else if (state == 'S') {   // Se o estado recebido for igual a 'S', o carro permanece parado.
@@ -189,7 +190,7 @@ void loop() {
     digitalWrite(IN2,0);
     digitalWrite(IN3,0);
     digitalWrite(IN4,0);
-    digitalWrite(vel_dir,vel);
+    digitalWrite(vel_dir,vel * FatCorr);
     digitalWrite(vel_esq,vel);
   }
   else if (state == 'W') {   // Se o estado recebido for igual a 'W', Farol dianteiro acende.
