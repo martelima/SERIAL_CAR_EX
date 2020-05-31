@@ -1,5 +1,5 @@
 /* 
-  Autor: Mateus Lima
+  Autor: Mateus Lima e Rafael Lima
   Descrição: Este é um código que possibilita o controle de um 
              carro bluetooth montado em arduino com uma shield 
              ponte H, através do protocolo serial
