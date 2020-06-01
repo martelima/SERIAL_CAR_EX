@@ -1,7 +1,7 @@
 Bluetooth Arduino RC CAR
 ========================
 
-Código para controle de carrinho RC pela sérial ( ou bluetooth ).
+Código para controle de carrinho RC pela serial ( ou bluetooth ).
 
 ## Requisitos
 
