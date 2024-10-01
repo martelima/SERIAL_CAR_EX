@@ -8,7 +8,7 @@ Código para controle de carrinho RC pela serial ( ou bluetooth ).
 ### Software
 
  - [IDE Arduino](https://www.arduino.cc/en/Main/Software)
- - [Aplicativo Android BT RC Car](https://play.google.com/store/apps/details?id=braulio.calle.bluetoothRCcontroller)
+ - [Aplicativo Android BT RC Car](https://bluetooth-rc-controller.br.aptoide.com/app)
 
 ### Hardware
 
